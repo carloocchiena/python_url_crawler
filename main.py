@@ -33,7 +33,7 @@ while flag:
                 temp.append(str(i.get('href')))
                 remove_duplicates(temp)
 
-                if len(links) > limit: # set limitation to number of URLs
+                if len(links) > limit:
                     break
             if len(links) > limit:
                 break
