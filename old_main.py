@@ -11,13 +11,11 @@ data = []
 links = []
 limit = 10
 
-
 def remove_duplicates(array): # remove duplicates and unURL string
     for item in array:
         match = re.search("(?P<url>https?://[^\s]+)", item)
         if match is not None:
             links.append((match.group("url")))
-
 
 for link in soup.find_all('a', href=True):
     data.append(str(link.get('href')))
