@@ -1,19 +1,14 @@
-from bs4 import BeautifulSoup as BS4
 import requests as req
+from bs4 import BeautifulSoup as BS4
 
-#globals
-
+# globals
 url = "https://www.ursite.com"
-
 raw_data = []
-
 temp_data = []
-
 clean_data = []
-
 limit = 10
 
-#data cleaner: remove not-urls and external links. Also, append items to the main stack.
+# data cleaner: remove not-urls and external links. Also, append items to the main stack.
 def cleaner(data):
     for items in data:
         if items[0:len(url)] == url:
@@ -21,7 +16,7 @@ def cleaner(data):
     global clean_data
     clean_data = set(temp_data)
 
-#recursive crawling  function    
+# recursive crawling  function    
 def crawler(url):
     
     count = 0
